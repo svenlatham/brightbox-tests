@@ -25,16 +25,17 @@ ENV PHPIZE_DEPS \
 		re2c
 
 # persistent / runtime deps
-# RUN set -eux; \
-# 	apt-get update; \
-# 	apt-get install -y --no-install-recommends \
-# 		$PHPIZE_DEPS \
-# 		ca-certificates \
-# 		curl \
-# 		xz-utils \
-# 	; \
-# 	rm -rf /var/lib/apt/lists/*
+RUN set -eux; \
+	apt-get update; \
+	apt-get install -y --no-install-recommends \
+		$PHPIZE_DEPS \
+		ca-certificates \
+		curl \
+		xz-utils \
+	; \
+	rm -rf /var/lib/apt/lists/*
 
+# SVEN TESTING TO HERE:
 # ENV PHP_INI_DIR /usr/local/etc/php
 # RUN set -eux; \
 # 	mkdir -p "$PHP_INI_DIR/conf.d"; \
