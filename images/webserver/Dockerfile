@@ -1,3 +1,3 @@
 # Based on https://raw.githubusercontent.com/docker-library/php/master/8.1/bullseye/apache/Dockerfile
 FROM debian:bullseye-slim
-ENV UNIQID=${UNIQID}
+RUN echo ${UNIQID} >/tmp
