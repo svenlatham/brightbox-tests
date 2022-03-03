@@ -39,3 +39,5 @@ jobs:
           file: images/${{ env.TAG_NAME }}/Dockerfile
           push: true
           tags: ${{ env.REGISTRY }}/${{ secrets.IMAGE_PREFIX }}/${{ env.TAG_NAME }}:latest
+          build-args: |
+            UNIQID=${{ github.run_id }}-${{ github.run_number }}
